@@ -17,6 +17,8 @@ class Testproject1(unittest.TestCase):
         self.deck0 = None
         self.war_game = None
 
+# test Deck below ----------------------------------------#  
+
     def test_suit_names(self):  # Show if input is correct
         self.assertEqual(self.card0.suit_names, [
                          "Diamonds", "Clubs", "Hearts", "Spades"])
@@ -29,7 +31,6 @@ class Testproject1(unittest.TestCase):
         self.assertEqual(self.card0.faces, {
                          1: "Ace", 11: "Jack", 12: "Queen", 13: "King"})
 
-    # Check some cases see if they are showed as the instruction describes
     def test_Card_str(self):
         self.assertEqual(self.card0.__str__(), "Jack of Clubs")
 
@@ -45,8 +46,10 @@ class Testproject1(unittest.TestCase):
                 suit = self.card0.suit_names[i]
                 result0 = "{} of {}".format(number, suit)
                 b.append(result0)
-        # b should be satisfied the list in the description
         self.assertEqual(a, b)
+        # b should be satisfied the list in the description
+
+# test Card below ----------------------------------------#          
 
     def test_self_cards(self):
         # Test the type of element of "cards"
@@ -96,6 +99,8 @@ class Testproject1(unittest.TestCase):
             self.deck0.pop_card()
         self.deck0.deal_hand(27)
 
+# test play_war_game below ----------------------------------------#        
+
     def test_play_war_game(self):
         self.assertIsInstance(self.war_game, tuple)  # check the type of output
         for _ in range(0, 50):  # check 50 times if results are right
@@ -106,6 +111,8 @@ class Testproject1(unittest.TestCase):
             else:
                 self.assertEqual(self.war_game[0], "Tie")
 
+# test show_song below ----------------------------------------#
+
     def test_show_song(self):
         song = show_song()
         self.assertIsInstance(song, Song)
@@ -114,9 +121,13 @@ class Testproject1(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-# You should test to ensure that everything explained in the code description file works as that file says.
-# If you have correctly written the tests, at least 3 tests should fail. If more than 3 tests fail, it should be because multiple of the test methods address the same problem in the code.
-# You may write as many TestSuite subclasses as you like, but you should try to make these tests well-organized and easy to read the output.
+# You should test to ensure that
+# everything explained in the code description file works as that file says.
+# If you have correctly written the tests, at least 3 tests should fail.
+# If more than 3 tests fail, it should be because multiple of
+# the test methods address the same problem in the code.
+# You may write as many TestSuite subclasses as you like, but you
+# should try to make these tests well-organized and easy to read the output.
 # You should invoke the tests with verbosity=2 (make sure you invoke them!)
 
 ###########
