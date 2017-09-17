@@ -17,7 +17,7 @@ class Testproject1(unittest.TestCase):
         self.deck0 = None
         self.war_game = None
 
-# test Deck below ----------------------------------------#  
+# test Card below ----------------------------------------#
 
     def test_suit_names(self):  # Show if input is correct
         self.assertEqual(self.card0.suit_names, [
@@ -49,7 +49,7 @@ class Testproject1(unittest.TestCase):
         self.assertEqual(a, b)
         # b should be satisfied the list in the description
 
-# test Card below ----------------------------------------#          
+# test Deck below ----------------------------------------#
 
     def test_self_cards(self):
         # Test the type of element of "cards"
@@ -99,7 +99,7 @@ class Testproject1(unittest.TestCase):
             self.deck0.pop_card()
         self.deck0.deal_hand(27)
 
-# test play_war_game below ----------------------------------------#        
+# test play_war_game below ----------------------------------------#
 
     def test_play_war_game(self):
         self.assertIsInstance(self.war_game, tuple)  # check the type of output
