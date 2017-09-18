@@ -117,8 +117,8 @@ class Testproject1(unittest.TestCase):
     def test_show_song(self):
         song = show_song()
         self.assertIsInstance(song, Song)
-        song2 = show_song("Bowie")
-        self.assertTrue("Bowie" in str(song2))
+        song2 = show_song("Aow")
+        self.assertTrue("Aow" in str(song2))
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
