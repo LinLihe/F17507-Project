@@ -56,17 +56,18 @@ class Testproject1(unittest.TestCase):
         self.assertIsInstance(self.deck0.cards[0], Card)
 
     def test_pop_card(self):  # check if "pop_card" works
-        for _ in range(0, 52):
+        self.assertEqual(str(self.deck0.pop_card(1)), "2 of Diamonds")
+
+        for _ in range(0, 51):
             self.deck0.pop_card()
         # After 52 times pop, "cards" list should be empty
         self.assertEqual(len(self.deck0.cards), 0)
 
     def test_shuffle(self):
         cards_string0 = [str(card) for card in self.deck0.cards]
-        # print (self.deck0.cards[0].__str__())
         self.deck0.shuffle()
         cards_string1 = [str(card) for card in self.deck0.cards]
-        self.assertEqual(cards_string1, cards_string0)
+        self.assertNotEqual(cards_string1, cards_string0)
 
     def test_replace_card(self):  # check if "replace_card" works
         for _ in range(0, 52):
